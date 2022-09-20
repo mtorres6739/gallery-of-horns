@@ -1,6 +1,12 @@
 import React from "react";
 import HornedBeast from "./components/HornedBeast";
 
+// copy the imports!
+import "bootstrap/dist/css/bootstrap.min.css";
+
+// import data.json
+import data from "./assets/data.json";
+
 const animalArray =
   [{
     "_id": 1,
@@ -33,22 +39,21 @@ class Main extends React.Component {
   render() {
     return (
       <>
-
-        {animalArray.map((animal) => {
-
-          return (
-            <>
-              <HornedBeast
-                title={animal.title}
-                image_url={animal.image_url}
-                description={animal.description}
-              />
-            </>
-          )
-        })}
+      {data.map((beast, index) => {
+        return (
+          <HornedBeast
+            key={index}
+            title={beast.title}
+            description={beast.description}
+            image_url={beast.image_url}
+            horns={beast.horns}
+          />
+        );
+      })}
       </>
     );
   }
 }
+
 
 export default Main;
