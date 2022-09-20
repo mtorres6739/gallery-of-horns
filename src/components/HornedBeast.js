@@ -1,7 +1,5 @@
 import React from "react";
-// import Horn1 from "horn1.jpg";
-// import Horn2 from "horn2.jpg";
-// import Horn3 from "horn3.jpg";
+
 
 
 const animalArray =
@@ -37,7 +35,7 @@ class HornedBeast extends React.Component {
     return (
       <>
 
-        {animalArray.map((animal) => {
+        {animalArray.map((animal, index) => {
 
           return (
             <>
