@@ -4,7 +4,9 @@ class Footer extends React.Component {
   render() {
     return (
       <>
-        <h1> &copy; 2022 Mathew Torres </h1>
+        <center>
+          <h6> &copy; 2022 Mathew Torres </h6>
+        </center>
       </>
     );
   }
