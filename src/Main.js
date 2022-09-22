@@ -3,7 +3,7 @@ import HornedBeast from "./components/HornedBeast";
 import BeastModal from "./components/BeastModal";
 
 // copy the imports!
-import "bootstrap/dist/css/bootstrap.min.css";
+
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -11,9 +11,6 @@ import Col from 'react-bootstrap/Col';
 // import data.json
 import data from "./assets/data.json";
 
-// Modal Code
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
 
 class Main extends React.Component {
 
