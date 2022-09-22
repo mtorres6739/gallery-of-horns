@@ -14,11 +14,15 @@ class BeastModal extends React.Component {
       <>
         <Modal show={this.props.showModel} onHide={this.props.setShowModelFalse}>
           <Modal.Header closeButton>
-            <Modal.Title>{this.props.selectedBeast.title}</Modal.Title>
+            <div className="modal-title">
+              <Modal.Title>{this.props.selectedBeast.title}</Modal.Title>
+            </div>
           </Modal.Header>
           <Modal.Body>
             <Image src={this.props.selectedBeast.image_url} alt={this.props.selectedBeast.title} fluid />
-            <p>{this.props.selectedBeast.description}</p>
+            <div className="modal-description">
+              <p>{this.props.selectedBeast.description}</p>
+            </div>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={this.props.setShowModelFalse}>
