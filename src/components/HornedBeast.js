@@ -3,7 +3,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-
+import Image from 'react-bootstrap/Image'
 
 
 
@@ -19,25 +19,39 @@ class HornedBeast extends React.Component {
   }
 
   // event handler
-  handleClick = () => {
+  handleClick = (e) => {
     this.setState({
-      description: this.state.description + " ❤️️"});
+      description: this.state.description + " ❤️️"
+    });
   }
 
   render() {
     return (
+   
+          <Card style={{ width: '18rem' }} className="mx-auto my-5">
+       
+            <Image
+              src={this.state.image_url}
+              className="card-img-top"
+              fluid
+              onClick={(e) => {this.props.showModalTrue(this.props.id);}}
+            />
 
-      <Card style={{ width: '18rem' }} className="mx-auto my-5">
-        <Card.Img variant="top" src={this.state.image_url} />
-        <Card.Body>
-          <Card.Title>{this.state.title}</Card.Title>
-          <Card.Text>
-            {this.state.description}
-          </Card.Text>
-          <Button variant="primary" onClick={this.handleClick}>Give me a vote!</Button>
-        </Card.Body>
-      </Card>
+              {/* <Card.Img as={Image} fluid={true} variant="top" src={this.state.image_url} onClick={(e) => {
+              this.props.showModalTrue(this.props.id);
+            }} /> */}
+  
+        <Card.Body className="py-auto">
+              <Card.Title>{this.state.title}</Card.Title>
+              <Card.Text>
+                {this.state.description}
+              </Card.Text>
+              <Button variant="primary" onClick={this.handleClick}>Give me a vote!</Button>
+            </Card.Body>
+          
 
+          </Card>
+   
     );
   }
 }
